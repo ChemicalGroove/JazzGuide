@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Genres</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     	* {
@@ -101,16 +104,6 @@
         	color: rgb(181, 237, 255);
         }
         
-        /*footer {
-        	background: rgb(181, 237, 255);
-            height: 5vh;
-            position: fixed;
-            bottom: 0;
-            
-        	text-align: center;
-            color: rgb(85, 53, 160);
-        }*/
-        
         body:after {
             content: '';
             display: block;
@@ -187,7 +180,7 @@
         
         nav div.option:hover a {
             transition: color 0.6s;
-        	color: rgb(85, 53, 160)
+        	color: rgb(85, 53, 160);
         }
         
         nav div.option {
@@ -197,16 +190,119 @@
         	text-decoration: none;
             color: white;
         }
+
+        nav div.option#navBreak {
+            cursor: default;
+        }
+
+        nav div.option#navBreak:hover {
+            background: #3cafe0;
+        }
+
+
+        @media only screen and (max-width: 912px) {
+            nav#deskNav {
+                display: none;
+            }
+            nav div.option {
+                width: 100%;
+            }
+        }
         
+        
+
+        .navTrigger {
+            position: fixed;
+            display: block;
+            top: 5vh;
+            left: 5vw;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: rgb(181, 237, 255);
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        /* Rotate first bar */
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+            transform: rotate(-45deg) translate(-9px, 6px) ;
+            background-color: rgb(85, 53, 160);
+        }
+
+        /* Fade out the second bar */
+        .change .bar2 {
+            opacity: 0;
+            background-color: rgb(85, 53, 160);
+        }
+
+        /* Rotate last bar */
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+            transform: rotate(45deg) translate(-8px, -8px) ;
+            background-color: rgb(85, 53, 160);
+        }
+
+        @media only screen and (min-width: 912px) {
+            .navTrigger {
+                display: none;
+            }
+        }
+
         </style>
+
+        <script>
+            function myFunction(x) {
+                x.classList.toggle("change");
+            }
+
+            function navDisplay() {
+                var x = document.getElementById("deskNav");
+                if (x.style.display == "block") {
+                    x.style.display = "none";
+                }
+                else {
+                    x.style.display = "block";
+                }
+            }
+
+            /*window.onresize = function() {
+                var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                var x = document.getElementById("navTrigger");
+                if (w > 912px) {
+                    x.style.display: block;
+                }
+            };*/
+            function navCheck() {
+                //var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                var w = $( window ).width();
+                var x = document.getElementById("navTrigger");
+                if (w > 912px) {
+                    x.style.display: block;
+                }
+            }
+        </script>
   </head>
-  <body>
+  <body onresize="navCheck()">
   	<header>
     	<h1>Introduction to <span>Jazz</span></h1>
         <!--h2><i><span>Jazz</span> genres</i></h2-->
     </header>
+
     <div class="row">
-      <nav class="col-1" id="deskNav">
+      <div class="navTrigger" onclick="myFunction(this);navDisplay()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+      <nav class="col-1 col-m-12" id="deskNav">
+        <div class="option"><a href="home.html"><i class="fa fa-home" id="homeLink"></i></a></div>
+        <div class="option" id="navBreak"><br><br></div>
       	<div class="option"><a href="bebop.html">Bebop</a></div>
         <div class="option"><a href="bebop.html">Chicago</a></div>
         <div class="option"><a href="bebop.html">Cool</a></div>
@@ -216,9 +312,11 @@
         <div class="option"><a href="bebop.html">Vocal</a></div>
         <div class="option"><a href="bebop.html">W. Coast</a></div>
       </nav>
-      <section class="col-10">
+
+      <section class="col-10 col-m-12">
           <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
       </section>
+
     </div>
     <footer class="col-12 col-m-12">
     	<pre>Copyright Chemical Groove 2017</pre>
