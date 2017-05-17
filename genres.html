@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Genres</title>
+    <meta charset="UTF-8">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -10,10 +11,7 @@
     <script type="text/javascript" src="js/genres.js"></script>
   </head>
   <body onresize="navCheck()">
-  	<header>
-    	<h1>Introduction to <span>Jazz</span></h1>
-        <!--h2><i><span>Jazz</span> genres</i></h2-->
-    </header>
+
 
     <div class="row">
       <div class="navTrigger" id="navTrigger" onclick="triggerAnim(this); navDisplay()">
@@ -22,19 +20,124 @@
           <div class="bar3"></div>
       </div>
       <nav class="col-1 col-m-12" id="deskNav">
-        <div class="option"><a href="home.html"><i class="fa fa-home" id="homeLink"></i></a></div>
+        <a href="home.html"><div class="option"><i class="fa fa-home" id="homeLink"></i></div></a>
         <div class="option" id="navBreak"><br><br></div>
-      	<div class="option"><a href="bebop.html">Bebop</a></div>
-        <div class="option"><a href="bebop.html">Chicago</a></div>
-        <div class="option"><a href="bebop.html">Cool</a></div>
-        <div class="option"><a href="bebop.html">Hard Bop</a></div>
-        <div class="option"><a href="bebop.html">Modal</a></div>
-        <div class="option"><a href="bebop.html">Swing</a></div>
-        <div class="option"><a href="bebop.html">Vocal</a></div>
-        <div class="option"><a href="bebop.html">W. Coast</a></div>
+        <div class="option" onclick="openTab(event, 'def')" id="defL">Definition</div>
+        <div class="option" onclick="openTab(event, 'bebop')" id="bebopL">Bebop</div>
+        <div class="option" onclick="openTab(event, 'chicago')" id="chicagoL">Chicago</div>
+        <div class="option" onclick="openTab(event, 'cool')" id="coolL">Cool</div>
+        <div class="option" onclick="openTab(event, 'hbop')" id="hbopL">Hard Bop</div>
+        <div class="option" onclick="openTab(event, 'modal')" id="modalL">Modal</div>
+        <div class="option" onclick="openTab(event, 'swing')" id="swingL">Swing</div>
+        <div class="option" onclick="openTab(event, 'vocal')" id="vocalL">Vocal</div>
+        <div class="option" onclick="openTab(event, 'wcoast')" id="wcoastL">W. Coast</div>
+        <div class="option" onclick="openTab(event, 'stands')" id="standsL">Standards</div>
       </nav>
 
-      <section class="col-10 col-m-12">
+      <!-- DEFINITION -->
+      <div class="tabcontent" id="def">
+        <header>
+        	<h1>Introduction to <span>Jazz</span></h1>
+            <!--h2><i><span>Jazz</span> genres</i></h2-->
+        </header>
+        <section class="col-10 col-m-12">
+            <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
+        </section>
+      </div>
+
+      <!-- BEBOP -->
+      <div class="tabcontent" id="bebop">
+        <header>
+        	<h1><span>Bebop Jazz</span></h1>
+            <!--h2><i><span>Jazz</span> genres</i></h2-->
+        </header>
+        <section class="col-10 col-m-12">
+          <p>Bebop jazz originated ...das; dsalkasddddddddddddddddddddddddddddddddddddddddddsadddddddddddddddddddddddddddddddsadasldsaldksalkdlsakdlsakdlaskdlaskdlkasdasdkada </p>
+        </section>
+        <div class="col-1 col-r-1 col-m-1"><p></p></div>
+        <div class="gallery col-r-10 col-5 col-m-10">
+          <!-- ONE CARD -->
+          <div class="card col-r-3 col-5 col-m-10">
+            <img src="docs/Bebop%20Jazz/Bud%20Powell/Bud%20Powell.jpg" alt="isadlsda" id="myBtn">
+            <!-- MODAL -->
+            <div id="modal1" class="modal">
+              <!-- CONTENT -->
+              <span class="close">&times;</span>
+              <div class="modal-content">
+              </div>
+            </div>
+            <div class="overlay" id="myBtn">
+              <p></p>
+              <div class="artist">Bud Powell</div>
+            </div>
+          </div>
+
+          <script>
+            // Get the modal
+            var modal = document.getElementById('modal1');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+                modal.style.visibility = "visible";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+                modal.style.visibility = "hidden";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+          </script>
+          <!-- END OF ONE CARD -->
+
+        </div>
+      </divd>
+
+      <!-- CHICAGO -->
+      <section class="col-10 col-m-12 tabcontent" id="chicago">
+          <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
+      </section>
+
+      <!-- COOL -->
+      <section class="col-10 col-m-12 tabcontent" id="cool">
+          <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
+      </section>
+
+      <!-- HARD BOP -->
+      <section class="col-10 col-m-12 tabcontent" id="hbop">
+          <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
+      </section>
+
+      <!-- SWING -->
+      <section class="col-10 col-m-12 tabcontent" id="swing">
+          <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
+      </section>
+
+      <!-- VOCAL -->
+      <section class="col-10 col-m-12 tabcontent" id="vocal">
+          <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
+      </section>
+
+      <!--W. COAST -->
+      <section class="col-10 col-m-12 tabcontent" id="wcoast">
+          <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
+      </section>
+
+      <!-- STANDARDS -->
+      <section class="col-10 col-m-12 tabcontent" id="stands">
           <i><p><span><b>Jazz:</b></span> a type of music of black American origin which emerged at the beginning of the 20th century, characterized by improvisation, syncopation, and usually a regular or forceful rhythm. Brass and woodwind instruments and piano are particularly associated with jazz, although guitar and occasionally violin are also used; styles include Dixieland, swing, bebop, and free jazz.</p></i>
       </section>
 
