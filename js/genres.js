@@ -41,3 +41,51 @@ function navCheck() {
       x.style.display = "none";
     }
 }
+
+
+// TAB SELECTION
+
+function openTab(evt, genre) {
+  var i, tabcontent, options;
+  document.getElementById("navTrigger").classList.remove("change");
+  var w;
+  if (window.innerWidth !== undefined) {
+    w = window.innerWidth;
+  }
+  else {
+    w = document.documentElement.clientWidth;
+  }
+  if (w < 1000)
+    document.getElementById("deskNav").style.display = "none";
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  options = document.getElementsByClassName("option");
+  for (i = 0; i < options.length; i++){
+    options[i].className = options[i].className.replace(" active", "");
+  }
+
+  document.getElementById(genre).style.display = "block";
+  evt.currentTarget.className += "active";
+}
+
+
+var modal = document.getElementById("modal1");
+var span = document.getElementsByClassName("close")[0];
+
+function triggerModal() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
