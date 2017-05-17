@@ -171,27 +171,28 @@
   }
 
   body:after {
-      content: '';
-      display: block;
-      height: 100px;
+    content: '';
+    display: block;
+    height: 10vh;
   }
 
   footer {
-      background: rgb(181, 237, 255);
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      text-align: center;
-      height: auto;
-      padding-top: 2vh;
-      padding-bottom: 2vh;
+    background: rgb(181, 237, 255);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    height: auto;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    z-index: 999;
     }
 
   footer pre {
     margin: auto;
-      position: relative;
-      bottom: 0%;
+    position: relative;
+    bottom: 0%;
   }
 
   a {
