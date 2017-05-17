@@ -9,6 +9,7 @@
       float: left;
   }
 
+
   @media only screen and (min-width: 600px) {
       .col-m-1 {width: 8.33%;}
       .col-m-2 {width: 16.66%;}
@@ -36,6 +37,24 @@
       .col-10 {width: 83.33%;}
       .col-11 {width: 91.66%;}
       .col-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 1000px) {
+      .col-r-1 {width: 8.33%;}
+      .col-r-2 {width: 16.66%;}
+      .col-r-3 {width: 25%;}
+      .col-r-4 {width: 33.33%;}
+      .col-r-5 {width: 41.66%;}
+      .col-r-6 {width: 50%;}
+      .col-r-7 {width: 58.33%;}
+      .col-r-8 {width: 66.66%;}
+      .col-r-9 {width: 75%;}
+      .col-r-10 {width: 83.33%;}
+      .col-r-11 {width: 91.66%;}
+      .col-r-12 {width: 100%;}
+  }
+
+  .col-0 {
+    width: 0%;
   }
 
   .row::after {
@@ -72,10 +91,10 @@
 
   header h1 {
     margin: auto;
-      text-align: center;
+    text-align: center;
 
-      color: white;
-      font-size: 2em;
+    color: white;
+    font-size: 2em;
   }
 
   header h1 span {
@@ -95,6 +114,11 @@
     color: rgb(181, 237, 255);
   }
 
+  #bebop h1 {
+    font-size: 2.5rem;
+    color: rgb(181, 237, 255);
+  }
+
   body:after {
       content: '';
       display: block;
@@ -109,6 +133,9 @@
       left: 0;
       text-align: center;
       height: auto;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      z-index: 999;
     }
 
   footer pre {
@@ -137,6 +164,11 @@
 
   section p {
     color: white;
+    font-size: 1em;
+
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
   }
 
   nav {
@@ -151,7 +183,7 @@
     list-style-type: none;
   }
 
-  nav a {
+  nav div {
     text-decoration: none;
     margin: auto;
     color: white;
@@ -164,9 +196,14 @@
     padding-top: 2vh;
   }
 
-  nav div.option:hover {
+  nav div:hover {
     cursor: pointer;
     background: rgb(181, 237, 255);
+  }
+
+  nav div .active {
+    background-color: rgb(181, 237, 255);
+    color: rgb(85, 53, 160);
   }
 
   nav div.option:hover a {
@@ -206,7 +243,7 @@
       top: 5vh;
       left: 5vw;
       cursor: pointer;
-      z-index: 2;
+      z-index: 1001;
   }
 
   .bar1, .bar2, .bar3 {
@@ -264,4 +301,114 @@
       nav#deskNav {
         display: none;
       }
+  }
+
+  nav#deskNav {
+    z-index: 1000;
+  }
+
+  .tabcontent {
+    display: none;
+  }
+
+  .tabcontent#def {
+    display: block;
+  }
+
+
+  .card {
+    position: relative;
+    height: 30vh;
+    margin-bottom: 5vh;
+    margin-right: 5vw;
+  }
+
+  .card img {
+    height: 30vh;
+    width: 100%;
+  }
+
+  .gallery {
+    margin-left: 5vw;
+    margin-top: -5vw;
+  }
+
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(181, 237, 255);
+    overflow: hidden;
+    width: 0;
+    transition: .5s ease;
+  }
+
+  .card:hover .overlay {
+    width: 100%;
+  }
+
+  .artist {
+    white-space: nowrap;
+    color: black;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .overlay {
+      width: 100%;
+    }
+  }
+
+
+  .card {
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .card:hover {
+    opacity: 0.8;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .modal-content {
+    background-color: rgb(85, 53, 160);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: rgb(181, 237, 255);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover, .close:focus {
+    color: rgb(232, 234, 234);
+    text-decoration: none;
+    cursor: pointer;
   }
