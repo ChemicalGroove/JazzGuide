@@ -308,6 +308,7 @@
 
   nav#deskNav {
     z-index: 1000;
+    overflow: auto;
   }
 
   .tabcontent {
@@ -433,6 +434,8 @@
 
   .modal-content h1 {
     text-align: center;
+    font-size: 2.5rem;
+    color: rgb(181, 237, 255);
   }
 
   .modal-content p {
