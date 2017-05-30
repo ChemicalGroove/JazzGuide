@@ -373,8 +373,16 @@
     transition: 0.4s;
   }
 
-  .card:hover img{
+  .card img:hover{
     opacity: 0.8;
+  }
+  
+  .modal-content:hover img {
+    opacity: 1;
+  }
+  
+  .modal-content:hover {
+  	cursor: default;
   }
 
   .modal {
